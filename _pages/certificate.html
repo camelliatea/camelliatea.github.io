@@ -7,8 +7,12 @@ author_profile: true
 
 {% include base_path %}
 
+<p>Jumlah sertifikat: {{ site.certificates | size }}</p>
+
 <div class="certificates">
   {% for post in site.certificates %}
-    {% include archive-single-certificate.html %}
+    <div class="certificate-card">
+      {% include archive-single-certificate.html %}
+    </div>
   {% endfor %}
 </div>

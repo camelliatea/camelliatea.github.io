@@ -12,14 +12,13 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="certificate-card">
-  <a href="{{ post.link }}" target="_blank" title="{{ post.title }}">
-    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="certificate-image">
-  </a>
-  <div class="certificate-info">
-    <h3 class="certificate-title">{{ post.title }}</h3>
-    <p>{{ post.institution }}</p>
-    <p>{{ post.date | date: "%d %B %Y" }}</p>
-    <p><strong>ID Credential:</strong> {{ post.credential }}</p>
-  </div>
+<a href="{{ post.link }}">
+  <img class="certificate-image" src="{{ post.image }}" alt="{{ post.title }}">
+</a>
+<div class="certificate-info">
+  <h3 class="certificate-title">{{ post.title }}</h3>
+  <p>{{ post.institution }}</p>
+  <p>{{ post.date }}</p>
+  <p><strong>ID Credential:</strong> {{ post.credential }}</p>
 </div>
+
