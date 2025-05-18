@@ -1,13 +1,16 @@
+.certificates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 atau 3 kolom responsif */
+  gap: 20px;
+  padding: 20px;
+}
+
 .certificate-card {
-  display: inline-block;
-  width: 300px;
-  margin: 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  background: #fff;
-  vertical-align: top;
+  background-color: #2c2c2c;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .certificate-image {
