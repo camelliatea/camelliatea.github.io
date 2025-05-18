@@ -257,10 +257,10 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _publications
+  # _certificate
   - scope:
       path: ""
-      type: publications
+      type: certificate
     values:
       layout: single
       author_profile: true

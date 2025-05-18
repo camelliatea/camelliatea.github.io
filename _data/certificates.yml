@@ -1,0 +1,13 @@
+- title: "Sertifikat Google Analytics"
+  issuer: "Google"
+  date: 2023-04-10
+  credential_id: "GA-12345678"
+  image: "/assets/images/cert-google-analytics.png"
+  url: "https://www.example.com/credential/GA-12345678"
+
+- title: "Sertifikat AWS Certified"
+  issuer: "Amazon Web Services"
+  date: 2024-01-15
+  credential_id: "AWS-87654321"
+  image: "/assets/images/cert-aws.png"
+  url: "https://www.example.com/credential/AWS-87654321"

@@ -7,8 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-# Hi! I'm Elita 👋
-I am an active third-year undergraduate student majoring in **Information Systems** with a growing interest in working with data and learning how it can help people make better decisions.
+Hi! I am Elita Camellia, an active third-year undergraduate student majoring in **Information Systems** with a growing interest in working with data and learning how it can help people make better decisions.
 
 Currently, I am joining the **Coding Camp 2025 powered by DBS Foundation** on **Machine Learning Engineer** path, where I'm gaining hands-on experience in data analysis, modeling, TensorFlow, and Scikit-Learn.
 
