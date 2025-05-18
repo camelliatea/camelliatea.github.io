@@ -1,14 +1,28 @@
 ---
 layout: default
-title: "Certificate"
+title: "Certificates"
 permalink: /certificate/
 author_profile: true
 ---
 
 {% include base_path %}
 
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+<h2>My Certificates</h2>
+<div class="certificate-gallery">
+  {% for cert in site.certificates %}
+    <div class="certificate-item">
+      <a href="{{ cert.link }}" target="_blank">
+        <img src="{{ cert.image | relative_url }}" alt="{{ cert.title }}">
+      </a>
+      <div class="certificate-details">
+        <h3>{{ cert.title }}</h3>
+        <p><strong>Issued by:</strong> {{ cert.issuer }}</p>
+        <p><strong>Date:</strong> {{ cert.date | date: "%B %Y" }}</p>
+        {% if cert.credential_id %}
+          <p><strong>Credential ID:</strong> {{ cert.credential_id }}</p>
+        {% endif %}
+        <p><a href="{{ cert.link }}" target="_blank">View Certificate</a></p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
