@@ -237,10 +237,10 @@ defaults:
       type: certificate
     values:
       layout: single
-  # projects
+  # _projects
   - scope:
       path: ""
-      type: project
+      type: projects
     values:
       layout: single
 
