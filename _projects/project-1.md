@@ -1,6 +1,6 @@
 ---
 title: "Blue Bike Sharing Data Analysis"
-excerpt: "An end-to-end data analysis project using a bike sharing dataset from Kaggle. Includes data wrangling, EDA, visualization, and dashboard creation.<br/><img src='/images/blue-bike-preview.png'>"
+excerpt: "An end-to-end data analysis project using a bike sharing dataset from Kaggle. Includes data wrangling, EDA, visualization, and dashboard creation.<br/><img src='/files/dashboard-project1.mp4'>"
 collection: project
 ---
 
