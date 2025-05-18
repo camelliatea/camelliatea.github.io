@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Elita Camellia"
   pronouns         : "she/her"  
-  bio              : "Exploring insights through data"
+  bio              : #"Exploring insights through data"
   location         : "Tangerang, Indonesia"
   employer         : "Binus University"
   uri              : # URL
