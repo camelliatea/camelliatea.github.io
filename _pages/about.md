@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me"
+title: "About me"
 author_profile: true
 redirect_from: 
   - /about/
@@ -15,12 +15,12 @@ Currently, I am joining the **Coding Camp 2025 powered by DBS Foundation** on **
  I’m now seeking **internship** or **entry-level** opportunities where I can apply my skills, gain hands-on experience, and continue learning in a professional setting.
 
 # Languages and Tools
-<div style="display: flex; flex-direction: column; align-items: start; gap: 10px;">
-  <img src="image.png" alt="Python" width="40">
-  <img src="image-1.png" alt="Pandas" width="40">
-  <img src="image-2.png" alt="Scikit-learn" width="40">
-  <img src="image-3.png" alt="NumPy" width="40">
-  <img src="image-4.png" alt="Matplotlib" width="40">
-  <img src="image-5.png" alt="Seaborn" width="40">
-  <img src="image-6.png" alt="TensorFlow" width="40">
-</div>
+<p>
+  <img src="/images/python-logo.png" alt="Python" width="40">
+  <img src="/images/pandas-logo.png" alt="Pandas" width="40">
+  <img src="/images/sklearn-logo.png" alt="Scikit-learn" width="40">
+  <img src="/images/numpy-logo.png" alt="NumPy" width="40">
+  <img src="/images/matplotlib-logo.png" alt="Matplotlib" width="40">
+  <img src="/images/seaborn-logo.png" alt="Seaborn" width="40">
+  <img src="/images/tf-logo.png" alt="TensorFlow" width="40">
+</p>

@@ -1,6 +1,6 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Blue Bike Sharing Data Analysis"
+excerpt: "An end-to-end data analysis project using a bike sharing dataset from Kaggle. Includes data wrangling, EDA, visualization, and dashboard creation.<br/><img src='/images/blue-bike-preview.png'>"
 collection: portfolio
 ---
 
