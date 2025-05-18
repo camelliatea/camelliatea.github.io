@@ -1,10 +1,10 @@
 ---
-title: "Machine Learning Operations (MLOps)"
+title: "Pengenalan ke Logika Pemrograman (Programming Logic 101)"
 institution: "Dicoding Indonesia"
-date: "23 December 2024"
-credential: "sksjdjdjd"
-image: /images/certificates/mlops.png
-link: 
+date: "13 February 2025"
+credential: "98XWEVJ09XM3"
+image: /images/certificate/programming-logic
+link: https://www.dicoding.com/certificates/98XWEVJ09XM3
 collection: certificate
 ---
 
