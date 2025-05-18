@@ -237,7 +237,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _certificate
+  # _certificates
   - scope:
       path: ""
       type: certificate
