@@ -1,0 +1,28 @@
+
+.certificate-card {
+  display: inline-block;
+  width: 300px;
+  margin: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  vertical-align: top;
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.certificate-info {
+  padding: 15px;
+  font-family: 'Arial', sans-serif;
+}
+
+.certificate-title {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}

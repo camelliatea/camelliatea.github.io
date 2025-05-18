@@ -1,9 +1,10 @@
 ---
-title: "Dicoding - Belajar AI untuk Pemula"
-excerpt: "Sertifikat dari Dicoding terkait pembelajaran Artificial Intelligence dasar."
+title: "Machine Learning Operations (MLOps)"
+institution: "Dicoding Indonesia"
+date: "23 December 2024"
+credential: "KEXL7E96MXG2"
+image: /images/certificates/mlops.png
+link: https://www.dicoding.com/certificates/KEXL7E96MXG2
 collection: certificates
-image: /images/certificates/dicoding-ai.png
-link: https://www.dicoding.com/certificates/ABC123
 ---
 
-Sertifikat ini menunjukkan pemahaman dasar tentang AI...
