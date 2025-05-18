@@ -217,7 +217,7 @@ collections:
   certificates:
     output: true
     permalink: /:collection/:path/
-  projects:
+  project:
     output: true
     permalink: /:collection/:path/
 
@@ -238,7 +238,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _projects
+  # _project
   - scope:
       path: ""
       type: project
