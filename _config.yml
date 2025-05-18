@@ -22,7 +22,7 @@ repository               : "camelliatea/camelliatea.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : /images/profile.png
+  avatar           : "IMG_7646.png"
   name             : "Elita Camellia"
   pronouns         : "she/her"  
   bio              : #"Exploring insights through data"
