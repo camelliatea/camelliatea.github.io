@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Hi there! I am Elita 👋"
+title: "Hello! I am Elita Camellia"
 author_profile: true
 redirect_from: 
   - /about/
