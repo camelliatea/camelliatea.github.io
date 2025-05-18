@@ -5,18 +5,10 @@ permalink: /certificate/
 author_profile: true
 ---
 
-<h1>{{ page.title }}</h1>
+{% include base_path %}
 
-<div class="certificates-list">
-  {% for cert in site.data.certificates %}
-    <div class="certificate-card" style="margin-bottom: 30px;">
-      <a href="{{ cert.url }}" target="_blank" rel="noopener noreferrer">
-        <img src="{{ cert.image }}" alt="{{ cert.title }}" style="width: 300px; border: 1px solid #ddd; border-radius: 8px;">
-      </a>
-      <h3>{{ cert.title }}</h3>
-      <p><strong>Penerbit:</strong> {{ cert.issuer }}</p>
-      <p><strong>Tanggal Terbit:</strong> {{ cert.date | date: "%d %B %Y" }}</p>
-      <p><strong>Credential ID:</strong> {{ cert.credential_id }}</p>
-    </div>
-  {% endfor %}
-</div>
+
+{% for post in site.portfolio %}
+  {% include archive-single.html %}
+{% endfor %}
+
