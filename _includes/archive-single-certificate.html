@@ -18,7 +18,7 @@
 <div class="certificate-info">
   <h3 class="certificate-title">{{ post.title }}</h3>
   <p>{{ post.institution }}</p>
-  <p>{{ post.date }}</p>
+  <p>{{ post.date | date: "%d %B %Y" }}</p>
   <p><strong>ID Credential:</strong> {{ post.credential }}</p>
 </div>
 
