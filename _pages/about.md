@@ -34,9 +34,6 @@ Currently, I am participating in the **Coding Camp 2025 powered by DBS Foundatio
   <a href="https://www.tensorflow.org/" target="_blank">
     <img src="/images/tf-logo.png" alt="TensorFlow" width="40">
   </a>
-  <a href="https://www.tensorflow.org/" target="_blank">
-    <img src="/images/tf-logo.png" alt="TensorFlow" width="40">
-  </a>
   <a href="" target="_blank">
     <img src="/images/sql-logo.png" alt="SQL" width="40">
   </a>
