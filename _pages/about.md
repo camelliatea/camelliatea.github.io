@@ -1,17 +1,15 @@
 ---
 permalink: /
-title: "About me"
+title: "Hi there! I am Elita 👋"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Hi! I am Elita Camellia, an active third-year undergraduate student majoring in **Information Systems** with a growing interest in working with data and learning how it can help people make better decisions.
+I am an active third-year undergraduate student majoring in **Information Systems** with a growing interest in working with data and learning how it can help people make better decisions. With a strong interest in data, I’m always eager to learn and use what I learn to solve real-world problems.
 
-Currently, I am joining the **Coding Camp 2025 powered by DBS Foundation** on **Machine Learning Engineer** path, where I'm gaining hands-on experience in data analysis, modeling, TensorFlow, and Scikit-Learn.
-
- I’m now seeking **internship** or **entry-level** opportunities where I can apply my skills, gain hands-on experience, and continue learning in a professional setting.
+Currently, I am participating in the **Coding Camp 2025 powered by DBS Foundation** as part of the **Machine Learning Engineer Cohort**, where I’m gaining hands-on experience in data analysis, modeling, and developing machine learning solutions using tools like TensorFlow and Scikit-Learn.
 
 # Languages and Tools
 <p>
@@ -35,5 +33,14 @@ Currently, I am joining the **Coding Camp 2025 powered by DBS Foundation** on **
   </a>
   <a href="https://www.tensorflow.org/" target="_blank">
     <img src="/images/tf-logo.png" alt="TensorFlow" width="40">
+  </a>
+  <a href="https://www.tensorflow.org/" target="_blank">
+    <img src="/images/tf-logo.png" alt="TensorFlow" width="40">
+  </a>
+  <a href="" target="_blank">
+    <img src="/images/sql-logo.png" alt="SQL" width="40">
+  </a>
+  <a href="https://www.postgresql.org/" target="_blank">
+    <img src="/images/postgresql-logo.png" alt="PostgreSQL" width="40">
   </a>
 </p>

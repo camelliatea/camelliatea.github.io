@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Elita's homepage"
+title                    : "About Me"
 title_separator          : "-"
 name                     : &name "Elita Camellia"
 description              : &description "personal description"
@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Elita Camellia"
   pronouns         : "she/her"  
-  bio              : "Data-Driven Learning"
+  bio              : "Exploring insights through data"
   location         : "Tangerang, Indonesia"
   employer         : "Binus University"
   uri              : # URL
@@ -217,7 +217,7 @@ collections:
   certificates:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  projects:
     output: true
     permalink: /:collection/:path/
 
@@ -237,10 +237,10 @@ defaults:
       type: certificate
     values:
       layout: single
-  # _portfolio
+  # projects
   - scope:
       path: ""
-      type: portfolio
+      type: project
     values:
       layout: single
 
