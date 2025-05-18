@@ -1,3 +1,17 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
 <div class="certificate-card">
   <a href="{{ post.link }}" target="_blank" title="{{ post.title }}">
     <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="certificate-image">
