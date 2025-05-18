@@ -1,0 +1,21 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div style="display: inline-block; width: 250px; margin: 10px;">
+  <a href="{{ post.link }}" target="_blank" title="{{ post.title }}">
+    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 100%; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.2);">
+  </a>
+  <p style="text-align: center; margin-top: 5px;">{{ post.title }}</p>
+</div>
+
