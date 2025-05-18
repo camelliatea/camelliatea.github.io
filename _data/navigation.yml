@@ -12,7 +12,7 @@ main:
     url: /portfolio/
 
   - title: "Certificate"
-    url: /certificates/    
+    url: /certificate/    
 
   - title: "CV"
     url: /files/Resume.pdf    
