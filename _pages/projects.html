@@ -5,10 +5,9 @@ permalink: /projects/
 author_profile: true
 ---
 
-<div class="projects">
-  {% for project in site.projects %}
-    <div class="project-card">
-      {% include archive-single-project.html post=project %}
-    </div>
-  {% endfor %}
-</div>
+{% include base_path %}
+
+
+{% for post in site.projects %}
+  {% include archive-single.html %}
+{% endfor %}
