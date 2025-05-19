@@ -1,0 +1,24 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<a href="{{ post.link }}">
+  <img class="certificate-image" src="{{ post.image }}" alt="{{ post.title }}">
+</a>
+<div class="certificate-info">
+  <h3 class="certificate-title">{{ post.title }}</h3>
+  <p>{{ post.institution }}</p>
+  <p>{{ post.date | date: "%d %B %Y" }}</p>
+  <p><strong>ID Credential:</strong> {{ post.credential }}</p>
+</div>
+

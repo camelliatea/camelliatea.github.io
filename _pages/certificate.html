@@ -1,0 +1,17 @@
+---
+layout: archive
+title: "Certificate"
+permalink: /certificate/
+author_profile: true
+---
+
+{% include base_path %}
+
+<div class="certificates">
+  {% for post in site.certificates %}
+    <div class="certificate-card">
+      {% include archive-single-certificate.html %}
+    </div>
+  {% endfor %}
+</div>
+
