@@ -12,7 +12,22 @@ main:
     url: /portfolio/
 
   - title: "Certificate"
-    url: /certificate/
+    url: /certificate/    
 
   - title: "CV"
-    url: /files/Resume.pdf
+    url: /files/Resume.pdf    
+    
+  #- title: "Portfolio"
+  #  url: /portfolio/
+        
+  #- title: "Blog Posts"
+  #  url: /year-archive/
+    
+  #- title: "CV"
+  #  url: /cv/
+    
+  # - title: "CV"
+  #   url: /cv-json/
+    
+  #- title: "Guide"
+  #  url: /markdown/
