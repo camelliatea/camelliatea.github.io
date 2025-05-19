@@ -9,7 +9,7 @@
 
 main:
   - title: "Projects"
-    url: /projects/
+    url: /project/
 
   - title: "Certificate"
     url: /certificate/    
