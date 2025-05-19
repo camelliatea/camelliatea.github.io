@@ -72,13 +72,13 @@ Cluster 2:
 
 **Logistic Regression**
 
-![Confusion Matrix LR](image.png)
+![Confusion Matrix LR](/images/projects/2/image.png)
 
 > The Logistic Regression model demonstrated strong performance, achieving a recall of 100%, indicating that it correctly identified all positive cases. However, its precision was slightly lower at 95.03%, suggesting the presence of some false positives, cases where negative instances were incorrectly classified as positive. According to the confusion matrix, the model produced 3,311 True Positives (TP), 1,689 True Negatives (TN), 173 False Positives (FP), and 0 False Negatives (FN).
 
 **Random Forest**
 
-![Confusion Matrix rf](image-1.png)
+![Confusion Matrix rf](/images/projects/2/image-1.png)
 
 
 > The Random Forest model showed perfect performance in all evaluation metrics, with 100% values for accuracy, precision, recall, and F1-score. The confusion matrix showed 3,311 TP, 1,689 TN, and 0 FP or FN, indicating perfect classification. While these results indicate a highly effective model, it also raises concerns of overfitting, where the model may have learned the training data very well, potentially reducing its ability to generalize to new data that it has not seen before.
