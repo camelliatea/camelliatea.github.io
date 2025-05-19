@@ -43,13 +43,15 @@ This project uses the [Bike Sharing Dataset](https://www.kaggle.com/datasets/lak
 > There is a positive correlation between actual temperature (temp) and perceived temperature (atemp) with the number of bike rentals. 
 
 **Correlation Between `atemp` and `count`**
-|       | atemp   | count   |
+
+|       | atemp  | count  |
 |-------|--------|--------|
 | atemp | 1.000  | 0.631  |
 | count | 0.631  | 1.000  |
 
 **Correlation Between `temp` and `count`**
-|       | temp   | count   |
+
+|       | temp   | count  |
 |-------|--------|--------|
 | temp  | 1.000  | 0.627  |
 | count | 0.627  | 1.000  |
