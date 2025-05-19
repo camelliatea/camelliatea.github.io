@@ -14,7 +14,7 @@ The primary goal of this project was to uncover meaningful insights from the dat
 
 **Project Details:** [Github](https://github.com/camelliatea/dicoding-proyek-analisis-data/)
 
-### Languages and Tools
+### Languages and Libraries
 - Python Notebook
 - Python
 - Streamlit
@@ -22,7 +22,7 @@ The primary goal of this project was to uncover meaningful insights from the dat
 - Matplotlib
 - Seaborn
 
-# Dataset
+### Dataset
 This project uses the [Bike Sharing Dataset](https://www.kaggle.com/datasets/lakshmi25npathi/bike-sharing-dataset) from Kaggle. The dataset contains hourly and daily counts of rental bikes from 2011 to 2012, collected from the Capital Bikeshare system, along with corresponding weather and seasonal information. For this project, only the **daily** data is used.
 
 # Business Statements and the Insights
