@@ -1,7 +1,7 @@
 ---
 title: "Beverage Sales Clustering and Classification"
 excerpt: "An end-to-end data analysis project using a bike sharing dataset from Kaggle. Includes data wrangling, EDA, visualization, and dashboard creation."
-date: 2025-03-09
+date: 2025-04-01
 author_profile: false
 ---
 
