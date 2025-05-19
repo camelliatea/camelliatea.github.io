@@ -1,6 +1,6 @@
 ---
 title: "Beverage Sales Clustering and Classification"
-excerpt: "An end-to-end data analysis project using a bike sharing dataset from Kaggle. Includes data wrangling, EDA, visualization, and dashboard creation."
+excerpt: "The project presents a complete end-to-end machine learning pipeline, starting with clustering to discover hidden patterns and followed by classification using cluster labels as targets. By determining optimal clusters through Silhouette Score and interpreting them through detailed aggregation, the project ensures meaningful data segmentation. These insights were then leveraged in a supervised classification model, evaluated using accuracy and F1-score to confirm performance and generalizability."
 date: 2025-04-01
 author_profile: false
 ---
@@ -62,7 +62,6 @@ Cluster 2:
 - The dominant customer type is B2C, and the most frequent product category is Soft Drinks. This indicates that Cluster 2 consists mainly of individual consumers purchasing small quantities of soft drinks without discounts, resulting in low overall spending per transaction.
 
 # Classification Evaluation
-
 ### Model Performance Metrics
 
 | Model  | Accuracy | Precision | Recall | F1-Score |
@@ -70,13 +69,13 @@ Cluster 2:
 | LR     | 0.9654  | 0.9503   | 1.000  | 0.9745   |
 | RF     | 1.0000  | 1.0000   | 1.000  | 1.0000   |
 
-**Logistic Regression**
+#### **Logistic Regression**
 
 ![Confusion Matrix LR](/images/projects/2/image.png)
 
 > The Logistic Regression model demonstrated strong performance, achieving a recall of 100%, indicating that it correctly identified all positive cases. However, its precision was slightly lower at 95.03%, suggesting the presence of some false positives, cases where negative instances were incorrectly classified as positive. According to the confusion matrix, the model produced 3,311 True Positives (TP), 1,689 True Negatives (TN), 173 False Positives (FP), and 0 False Negatives (FN).
 
-**Random Forest**
+#### **Random Forest**
 
 ![Confusion Matrix rf](/images/projects/2/image-1.png)
 
@@ -84,7 +83,6 @@ Cluster 2:
 > The Random Forest model showed perfect performance in all evaluation metrics, with 100% values for accuracy, precision, recall, and F1-score. The confusion matrix showed 3,311 TP, 1,689 TN, and 0 FP or FN, indicating perfect classification. While these results indicate a highly effective model, it also raises concerns of overfitting, where the model may have learned the training data very well, potentially reducing its ability to generalize to new data that it has not seen before.
 
 ### Tuning Hyperparameter
-
 The `RandomizedSearchCV` method was employed to optimize hyperparameters for both the Logistic Regression and Random Forest models. For **Logistic Regression**, the best parameters identified were {'solver': 'liblinear', 'penalty': 'l2', 'C': 1438.45}. These settings led to a perfect classification result, with the model achieving an accuracy of 1.00 after tuning.
 
 For the **Random Forest** model, the tuning process involved 75 fits across 15 different hyperparameter combinations using 5-fold cross-validation. The optimal configuration found was {'n_estimators': 300, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'log2', 'max_depth': 30, 'bootstrap': True}. Similar to Logistic Regression, this tuned model also achieved an accuracy of 1.00, indicating excellent predictive performance. However, such perfect accuracy warrants further validation to ensure the model is not overfitting.
