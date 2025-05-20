@@ -89,7 +89,3 @@ This project uses the [Bike Sharing Dataset](https://www.kaggle.com/datasets/lak
 # Dashboard
 ![Preview Dashboard](/files/Dashboard.gif)
 #### You can try the dashboard on this [link](https://bluebikedashboard.streamlit.app/)
-
-# Assessment Results
-![Results](/images/projects/1/image-6.png)
-> Satisfies all mandatory and optional criteria.
