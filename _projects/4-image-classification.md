@@ -59,7 +59,7 @@ Each class contains **5,000+ samples**, ensuring reliable training and generaliz
     - `rotation_range=15` for randomly rotate images
     - `zoom_range=0.1` for randomly zoom in/out up to 10%
     - `fill_mode='nearest'` for filling empty pixels after transformation using nearest pixel values
-    - v`alidation_split=0.2` for reverse 20% of training data for validation.
+    - `validation_split=0.2` for reverse 20% of training data for validation.
 
 
 ### 3. **Model Architecture**
@@ -84,6 +84,7 @@ Each class contains **5,000+ samples**, ensuring reliable training and generaliz
 ![Confusion Matrix](/images/projects/4/image-1.png)
 
 **Classification Report:**
+
 | Class       | Precision | Recall | F1-Score | Support |
 |-------------|-----------|--------|----------|---------|
 | RBCs        | 0.9776    | 0.9994 | 0.9884   | 1748    |
