@@ -419,7 +419,7 @@ RMSE mengkuadratkan kesalahan prediksi sehingga penalti terhadap kesalahan besar
 
 **Hasil Evaluasi RMSE**
 
-![Result Evaluation RMSE](image.png)
+![Result Evaluation RMSE](/images/projects/6/image.png)
 
 Berdasarkan grafik pelatihan model yang menunjukkan metrik root_mean_squared_error pada data training dan testing, didapatkan bahwa nilai RMSE stabil pada kisaran:
 

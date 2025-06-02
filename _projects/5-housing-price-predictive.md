@@ -140,7 +140,7 @@ Dataset ini cukup bersih dengan mengandung 50.000 baris dan 6 kolom, di mana 1 k
 
 Berikut ini adalah hasil yang diperoleh dari Univariate Analysis:
 
->![Histogram untuk seluruh fitur numerik](image-2.png)
+>![Histogram untuk seluruh fitur numerik](/images/projects/5/image-2.png)
 
 >- Fitur `SquareFeet` menunjukkan penyebaran yang merata antara 1.000 hingga 3.000 kaki persegi, tanpa adanya ukuran yang secara signifikan mendominasi. Ini mencerminkan bahwa variasi ukuran rumah dalam dataset seimbang.
 >- Fitur `Bedrooms` menunjukkan adanya empat kategori dalam data tersebut, yakni 2, 3, 4, dan 5 kamar tidur. Secara umum distribusinya cukup seimbang, tetapi rumah dengan 3 kamar tidur tampak sedikit lebih dominan dibandingkan kategori lainnya.
@@ -148,7 +148,7 @@ Berikut ini adalah hasil yang diperoleh dari Univariate Analysis:
 >- Fitur `YearsBulit` menunjukkan pola yang relatif konsisten dari dekade ke dekade dengan sedikit fluktuasi. Ini dapat mengindikasikan bahwa pembangunan rumah berlangsung stabil sepanjang waktu.
 >- Fitur `Price` menunjukkan pola yang cukup normal dengan puncak harga berkisar pada 200.000 hingga 250.000. Namun, terdapat sedikit kemiringan ke kanan (positive skew) yang menandakan bahwa terdapat sebagian kecil rumah yang memiliki harga jauh lebih mahal. Meskipun begitu, ini umum terjadi pada data properti.
 
->![Bar chart untuk fitur Neighborhood](image-3.png)
+>![Bar chart untuk fitur Neighborhood](/images/projects/5/image-3.png)
 
 Fitur `Neighborhood` menunjukkan distribusi yang hampir merata di seluruh kategorinya. Jumlah sampel dalam setiap kategori lingkungan tampak seimbang yang mencerminkan bahwa cakupannya cukup representatif dari berbagai kawasan.
 
@@ -157,18 +157,18 @@ Fitur `Neighborhood` menunjukkan distribusi yang hampir merata di seluruh katego
 
 Berikut ini adalah hasil yang diperolah dari Multivariate Analysis:
 
->![Rata-rata Harga Rumah Berdasarkan Neighborhood](image-4.png)
+>![Rata-rata Harga Rumah Berdasarkan Neighborhood](/images/projects/5/image-4.png)
 
 Berdasarkan visualisasi, rata-rata harga rumah di setiap kategori `Neighborhood` (Rural, Suburb, Urban) terlihat relatif setara. Hal ini menunjukkan bahwa variabel `Neighborhood` kemungkinan tidak memiliki pengaruh yang signifikan terhadap Price.
 
->![Pairplot untuk eksplorasi hubungan antar fitur Numerik](image-5.png)
+>![Pairplot untuk eksplorasi hubungan antar fitur Numerik](/images/projects/5/image-5.png)
 
 >- `Price` dan `SquareFeet` menunjukkan hubungan positif yang kuat, yakni semakin besar luas bangunan, semakin tinggi pula harga rumah. Ini mengindikasikan bahwa luas bangunan merupakan prediktor yang kuat terhadap harga.
 >- `Price` dan `Bedrooms` tidak menunjukkan korelasi yang kuat, sehingga jumlah kamar tidur mungkin bukan faktor utama yang memengaruhi harga.
 >- `Price` dan `Bathrooms` juga tidak menunjukkan korelasi yang berarti.
 >- `Price` dan `YearBuilt` terlihat memiliki pola acak, yang mengindikasikan bahwa tidak ada hubungan korelasi yang jelas antara tahun pembangunan rumah dan harga rumah.
 
->![Correlation Matrix untuk fitur numerik](image-6.png)
+>![Correlation Matrix untuk fitur numerik](/images/projects/5/image-6.png)
 
 >- `Price` dan `SquareFeet` memiliki korelasi kuat sebesar 0,75, yang mana memperkuat temuan dari pairplot.
 >- `Price` dan `Bedrooms` memiliki korelasi yang lemah, hanya sekitar 0,07.
@@ -198,13 +198,13 @@ Setelah dilakukan pemeriksaan outlier pada seluruh fitur numerik, ditemukan bahw
 
 > Hasil pemeriksaan outlier pada fitur `Price`
 
-![Outlier pada fitur Price](image.png)
+![Outlier pada fitur Price](/images/projects/5/image.png)
 
 Untuk membersihkan nilai outlier pada fitur `Price`, dibuat sebuah fungsi `remove_outliers()` dengan metode IQR (Interquartile Range) dalam beberapa kali iterasi (dalam kasus ini adalah 2 kali iterasi). Di dalam setiap iterasi, fungsi ini menghitung kuartil atas dan bawah (Q3 dan Q1), serta IQR (selisih antara Q3 dan Q1). Berdasarkan IQR tersebut, ditentukan batas bawah dan batas atas dengan rumus: `lower_bound = Q1 - 1.5 * IQR` dan `upper_bound = Q3 + 1.5 * IQR`. Terakhir, data yang nilainya berada di luar rentang tersebut dianggap sebagai outlier dan dihapus dari DataFrame. Adapun, beberapa kali iterasi dilakukan dalam proses ini untuk memastikan bahwa data telah sepenuhnya bersih dari nilai outlier.
 
 > Hasil setelah dilakukan penanganan terhadap outlier pada fitur `Price`
 
-![Setelah outlier ditangani](image-1.png)
+![Setelah outlier ditangani](/images/projects/5/image-1.png)
 
 
 ## Encoding Fitur Numerik
