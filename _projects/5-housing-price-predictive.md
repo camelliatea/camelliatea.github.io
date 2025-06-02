@@ -7,14 +7,17 @@ author_profile: false
 
 # Tools
 
-- **Jupyter Notebook**: [Colab](https://github.com/camelliatea/anime-recommendation-system/blob/main/System_Recommendation_Notebook.ipynb)
+- **Jupyter Notebook**: [Colab](https://github.com/camelliatea/housing-price-predictive-analytics/blob/main/Predictive_Analytics_Notebook.ipynb)
 - **Bahasa Pemrograman:** Python
 - **Pustaka:** 
-    - Pandas dan Numpy, untuk manipulasi dan analisis data.
-    - Matplotlib, untuk visualisasi data.
-    - scikit-learn, untuk ekstraksi fitur teks (TF-IDF) dan perhitungan cosine similarity dalam pendekatan Content-Based Filtering.
-    - TensorFlow dan Keras, untuk pembangunan dan pelatihan model machine learning dalam pendekatan Collaborative Filtering.
-- **Sumber Dataset:** [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database)
+    - Pandas, untuk manipulasi dan analisis data.
+    - Matplotlib dan Seaborn, untuk eksplorasi dan visualisasi data.
+    - scikit-learn, untuk berbagai tahapan machine learning, termasuk:
+        - *Preprocessing* data dengan **OneHotEncoder** dan **StandardScaler**.
+        - *Model training* menggunakan algoritma seperti **Linear Regression**, **Random Forest Regressor**, dan **Gradient Boosting Regressor**.
+        - *Model selection & tuning* dengan **train_test_split** dan **RandomizedSearchCV**.
+        - *Evaluasi model* menggunakan metrik seperti **mean_squared_error**.
+- **Sumber Dataset:** [Housing Price Prediction Data](https://www.kaggle.com/datasets/muhammadbinimran/housing-price-prediction-data)
 
 # Project Domain
 

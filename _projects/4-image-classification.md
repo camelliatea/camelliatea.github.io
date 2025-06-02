@@ -1,32 +1,28 @@
 ---
 title: "Parasite Image Classification"
-excerpt: "This project presents a TensorFlow-based image classification model designed to identify three parasite classes (RBCs, Toxoplasma, and Trichomonad) from microscopic images. It showcases the application of deep learning techniques for automating image data analysis, encompassing the complete workflow from data preprocessing and model training to performance evaluation and real-world deployment."
+excerpt: "Proyek ini bertujuan untuk membantu analisis dan klasifikasi gambar Parasite secara otomatis dengan memanfaatkan model deep learning. Model dirancang untuk mengenali tiga kelas dalam dataset Parasite, yaitu RBC, Toxoplasma, dan Trichomonad. Proyek ini merupakan bagian dari tugas akhir kelas 'Belajar Pengembangan Machine Learning.'"
 date: 2025-04-21
 author_profile: false
 ---
 
-# Project Overview
-
-This project implements an image classification model using TensorFlow to identify three parasite-related classes (**RBCs**, **Toxoplasma**, and **Trichomonad**) from microscopic images. Developed as part of the final project for the *"Belajar Pengembangan Machine Learning"* course, the project highlights how deep learning can assist in medical diagnostics by automating image analysis.
-
-The development pipeline spans from data preparation and augmentation to model training, evaluation, and deployment across multiple platforms.
-
-Key goals:
-- Automate detection of parasitic structures in microscopic images.
-- Explore convolutional neural networks (CNNs) for medical image classification.
-
+# Tools
 
 **Project Details:** [Github](https://github.com/camelliatea/dicoding-image-classification)
-
-
-### Languages and Tools
-
 - **Language:** Python  
 - **Data Handling:** Pandas, NumPy  
 - **Image Processing:** Pillow  
 - **Modeling & Training:** TensorFlow, Keras, scikit-learn  
 - **Visualization:** Matplotlib, Seaborn  
-- **Utilities:** TQDM, OS, Shutil  
+- **Utilities:** TQDM, OS, Shutil 
+
+# Project Overview
+
+Proyek ini mengembangkan model klasifikasi citra menggunakan TensorFlow untuk mengidentifikasi tiga kelas yang berhubungan dengan parasit, yaitu RBCs, Toxoplasma, dan Trichomonad, dari citra mikroskopis. Proyek ini menunjukkan bagaimana teknologi deep learning dapat dimanfaatkan untuk mendukung diagnosis medis dengan mengotomatiskan proses analisis citra.
+
+Tahapan pengembangan mencakup mulai dari persiapan dan augmentasi data, pelatihan dan evaluasi model, hingga penyimpanan model dan proses inference.
+
+Tujuan utama dari proyek ini adalah untuk mengotomatisasi deteksi struktur parasit dalam citra mikroskopis serta mengeksplorasi penerapan jaringan saraf konvolusional (CNN) dalam klasifikasi citra medis. Dengan pendekatan ini, diharapkan dapat meningkatkan efisiensi dan akurasi dalam proses identifikasi parasit di lingkungan laboratorium.
+ 
 
 ### Dataset
 
