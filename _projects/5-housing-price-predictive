@@ -5,7 +5,7 @@ date: 2025-05-16
 author_profile: false
 ---
 
-## Tools
+# Tools
 
 - **Jupyter Notebook**: [Colab](https://github.com/camelliatea/anime-recommendation-system/blob/main/System_Recommendation_Notebook.ipynb)
 - **Bahasa Pemrograman:** Python
@@ -16,7 +16,7 @@ author_profile: false
     - TensorFlow dan Keras, untuk pembangunan dan pelatihan model machine learning dalam pendekatan Collaborative Filtering.
 - **Sumber Dataset:** [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database)
 
-## Project Domain
+# Project Domain
 
 Permintaan terhadap hunian yang layak dan terjangkau terus meningkat seiring dengan pertumbuhan populasi dan urbanisasi, termasuk di Indonesia. Laporan Bank Indonesia (BI) mencatat bahwa penjualan properti residensial tumbuh sebesar 0,73% (year-on-year) pada triwulan I 2025, membaik dibandingkan kontraksi 15,09% pada kuartal sebelumnya [1].
 
@@ -29,11 +29,11 @@ Referensi:
 [1] Departemen Komunikasi. (2025). Survei Harga Properti Residensial Triwulan I 2025: Harga Properti Residensial Tumbuh Terbatas. Bank Indonesia. https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_279925.aspx
 
 
-## Business Understanding
+# Business Understanding
 
 Pada tahap awal proyek ini, dilakukan klarifikasi terhadap permasalahan yang ingin diselesaikan. Permasalahan yang diangkat berhubungan dengan bagaimana memprediksi harga rumah berdasarkan fitur-fitur yang tersedia dalam dataset serta memahami faktor-faktor yang memengaruhi harga tersebut.
 
-### Problem Statements
+## Problem Statements
 
 - **Apa sajakah fitur yang paling berpengaruh terhadap harga rumah?**
     
@@ -43,14 +43,14 @@ Pada tahap awal proyek ini, dilakukan klarifikasi terhadap permasalahan yang ing
 
     Untuk memberikan estimasi harga rumah yang akurat, diperlukan model prediksi yang mampu menghasilkan nilai yang sangat mendekati harga aktual, dengan kemampuan untuk generalisasi yang baik pada data baru dan tanpa overfitting/underfitting. 
 
-### Goals
+## Goals
 
 Dalam proyek ini, dilakukan serangkaian analisis dan pemodelan untuk memahami faktor-faktor yang memengaruhi harga rumah serta membangun sistem prediksi yang akurat. Adapun tujuan utama dari proyek ini mencakup:
 - Mengidentifikasi fitur penting yang memengaruhi harga rumah melalui analisis statistik.
 - Membangun model prediksi harga yang memanfaatkan kombinasi fitur relevan sehingga pengguna dapat memperoleh estimasi harga secara cepat dan akurat.
 - Mengevaluasi dan membandingkan performa beberapa algoritma regresi untuk menentukan model dengan tingkat akurasi yang optimal serta kemampuan generalisasi yang baik terhadap data baru.
 
-### Solution statements
+## Solution statements
 
 Model terbaik dipilih berdasarkan keseimbangan antara akurasi yang tinggi dan kemampuan generalisasi yang baik, dengan mempertimbangkan selisih antara MSE pada data pelatihan dan pengujian untuk memastikan bahwa model tidak mengalami overfitting dan memiliki performa yang konsisten. Beberapa pendekatan diterapkan untuk mencapai tujuan utama proyek ini, yaitu sebagai berikut:
 
@@ -72,11 +72,11 @@ Model terbaik dipilih berdasarkan keseimbangan antara akurasi yang tinggi dan ke
     Tuning dilakukan menggunakan pendekatan Randomized Search dengan *cross-validation* untuk menghindari overfitting. Model akan dievaluasi menggunakan MSE untuk menilai dampak tuning terhadap akurasi model. 
 
 
-## Data Understanding
+# Data Understanding
 
 Dataset yang digunakan pada proyek ini adalah 'Housing Price Prediction Data' yang tersedia di [Kaggle](https://www.kaggle.com/datasets/muhammadbinimran/housing-price-prediction-data). Untuk memahami data, dilakukan beberapa tahapan yang mencakup Variabel Description, pemeriksaan dan penanganan outliers, Univariate Analysis dan Multivariate Analysis.
 
-### Variabel Description
+## Variabel Description
 
 ```
 <class 'pandas.core.frame.DataFrame'>
@@ -97,6 +97,7 @@ memory usage: 2.3+ MB
 ```
  array(['Rural', 'Suburb', 'Urban'], dtype=object)
 ```
+
 |           | SquareFeet | Bedrooms | Bathrooms | YearBuilt | Price            |
 |-----------|------------|----------|-----------|-----------|------------------|
 | Count     | 50000.000  | 50000.000| 50000.000 | 50000.000 | 50000.000        |
@@ -135,7 +136,7 @@ Dataset ini cukup bersih dengan mengandung 50.000 baris dan 6 kolom, di mana 1 k
 
 - Seluruh kolom tidak memiliki data kosong. 
 
-### Univariate Analysis
+## Univariate Analysis
 
 Berikut ini adalah hasil yang diperoleh dari Univariate Analysis:
 
@@ -152,7 +153,7 @@ Berikut ini adalah hasil yang diperoleh dari Univariate Analysis:
 Fitur `Neighborhood` menunjukkan distribusi yang hampir merata di seluruh kategorinya. Jumlah sampel dalam setiap kategori lingkungan tampak seimbang yang mencerminkan bahwa cakupannya cukup representatif dari berbagai kawasan.
 
 
-### Multivariate Analysis
+## Multivariate Analysis
 
 Berikut ini adalah hasil yang diperolah dari Multivariate Analysis:
 
@@ -176,6 +177,7 @@ Berdasarkan visualisasi, rata-rata harga rumah di setiap kategori `Neighborhood`
 >- Tidak terlihat adanya multikolinearitas signifikan antar fitur numerik sehingga dimensi tidak perlu dilakukan reduksi dimensi.
 
 Struktur DataFrame `house` terbaru:
+
 | Index | SquareFeet | Bedrooms | Bathrooms | Neighborhood |     Price      |
 |-------|------------|----------|-----------|--------------|----------------|
 |   0   |    2126    |    4     |     1     |     Rural    | 215,355.283618 |
@@ -185,12 +187,12 @@ Struktur DataFrame `house` terbaru:
 |   4   |    2130    |    5     |     2     |    Suburb    | 272,436.239065 |
 
 
-## Data Preparation
+# Data Preparation
 
 Dalam menyiapkan data, terdapat beberapa tahapan penting untuk memastikan bahwa data siap digunakan oleh algoritma machine learning. Dalam proyek ini, terdapat dua tahapan utama yang dilakukan, yaitu Encoding Fitur Non-Numerik (Kategorikal) dan Train-Test Split.
 
 
-### Outliers Handling
+## Outliers Handling
 
 Setelah dilakukan pemeriksaan outlier pada seluruh fitur numerik, ditemukan bahwa hanya fitur Price yang mengandung outlier. Hal ini sekaligus mengonfirmasi keberadaan data yang menyimpang, yang sebelumnya telah terdeteksi di eksplorasi awal. Temuan ini menunjukkan bahwa nilai ekstrem pada harga rumah perlu ditangani secara khusus agar tidak memengaruhi hasil analisis dan akurasi model prediktif.
 
@@ -205,13 +207,14 @@ Untuk membersihkan nilai outlier pada fitur `Price`, dibuat sebuah fungsi `remov
 ![Setelah outlier ditangani](image-1.png)
 
 
-### Encoding Fitur Numerik
+## Encoding Fitur Numerik
 
 Pada tahapan ini, fitur non-numerik, seperti `Neighborhood`, perlu dikonversi ke dalam format numerik agar dapat dipahami oleh model machine learning. Dalam proyek ini, proses encoding dilakukan menggunakan metode One-Hot Encoding, yakni mengubah setiap kategori dalam `Neighborhood` menjadi beberapa kolom biner (True-False).
 
 Dalam prosesnya, fungsi `pd.get_dummies()` digunakan untuk membuat kolom-kolom baru berdasarkan setiap kategori unik dalam fitur `Neighborhood`, yaitu `Neighborhood_Rural`, `Neighborhood_Suburb`, dan `Neighborhood_Urban`. Masing-masing kolom berisi nilai biner (0/1 atau False/True) yang menunjukkan apakah suatu baris termasuk dalam kategori tersebut. Setelah proses encoding selesai, kolom asli Neighborhood dihapus dari dataset menggunakan `drop()`, karena informasi dari kolom tersebut sudah sepenuhnya direpresentasikan oleh kolom-kolom hasil encoding. Pendekatan ini penting agar model tidak salah menginterpretasikan urutan atau skala dalam data kategorikal.
 
 Hasil setelah dilakukan One-Hot Encoding:
+
 | Index | SquareFeet | Bedrooms | Bathrooms |     Price     | Neighborhood_Rural  | Neighborhood_Suburb  | Neighborhood_Urban  |
 |-------|------------|----------|-----------|---------------|---------------------|----------------------|---------------------|
 |   0   |    2126    |    4     |     1     | 215355.283618 |        True         |        False         |        False        |
@@ -221,7 +224,7 @@ Hasil setelah dilakukan One-Hot Encoding:
 |   4   |    2130    |    5     |     2     | 272436.239065 |        False        |        True          |        False        |
 
 
-### Train-Test Split
+## Train-Test Split
 
 Pada tahapan ini, dataset akan dibagi menjadi data latih dan data uji untuk memastikan bahwa model dapat belajar dan diuji, serta mencegah overfitting dan memberikan gambaran performa model yang lebih objektif.
 
@@ -241,7 +244,7 @@ Hasil standarisasi menunjukkan bahwa rata-rata nilai untuk fitur SquareFeet dan 
 Rentang ini menunjukkan bahwa data telah terdistribusi secara seimbang yang memungkinkan model untuk belajar dengan lebih stabil.
 
 
-## Modeling
+# Modeling
 
 Pada tahap pemodelan, beberapa algoritma machine learning digunakan untuk menyelesaikan permasalahan prediksi harga rumah berdasarkan fitur-fitur yang tersedia. Tujuan dari penggunaan beberapa algoritma adalah untuk membandingkan performa masing-masing model dan menentukan algoritma terbaik yang dapat digunakan sebagai solusi akhir. 
 
@@ -249,7 +252,7 @@ Proses pemodelan dan pelatihan dilakukan melalui beberapa tahapan utama:
 1. Inisialisasi model: Model machine learning yang akan digunakan, diinisialisasi sesuai dengan algoritma yang dipilih.
 2. Pelatihan dengan data latih: Model dilatih menggunakan X_train sebagai fitur dan y_train sebagai target dengan tujuan dapat mengenali pola dari dataset.
 
-### Solution 1
+## Solution 1
 
 Dalam proyek ini, tiga algoritma utama yang diterapkan untuk *Solution 1* adalah Linear Regression (LR), Random Forest Regressor (RF), dan Gradient Boosting Regressor (GB). 
 - **Linear Regression (LR)**
@@ -300,7 +303,7 @@ Dalam proyek ini, tiga algoritma utama yang diterapkan untuk *Solution 1* adalah
     - Proses pelatihan lebih lama dibandingkan model lain.
     - Rentan terhadap overfitting jika tidak dilakukan pengaturan parameter secara tepat.
 
-### Solution 2
+## Solution 2
 
 Setelah dilakukan tuning hyperparameter, diperoleh konfigurasi terbaik untuk model Random Forest dan Gradient Boosting sebagai berikut.
 
@@ -321,11 +324,11 @@ Setelah dilakukan tuning hyperparameter, diperoleh konfigurasi terbaik untuk mod
     - `random_state=42`: Nilai acak untuk menjaga konsistensi hasil setiap kali kode dijalankan ulang.
 
 
-## Evaluation
+# Evaluation
 
 Setelah seluruh model selesai dilatih, performanya dievaluasi menggunakan metrik **Mean Squared Error (MSE)**. Model terbaik dipilih berdasarkan kemampuan generalisasi, yang diukur dari selisih MSE antara data pelatihan dan pengujian, serta seberapa dekat hasil prediksi dengan nilai aktual.
 
-### Metrik MSE
+## Metrik MSE
 
 Mean Squared Error (MSE) merupakan metrik yang menghitung rata-rata dari kuadrat selisih antara nilai aktual dan nilai prediksi. Metrik ini memberikan penalti yang lebih besar terhadap kesalahan prediksi yang besar, sehingga sangat efektif untuk mendeteksi model yang membuat prediksi yang ekstrem.
 Formula MSE secara matematis dituliskan sebagai berikut:
@@ -341,7 +344,7 @@ dengan:
 
 Semakin kecil nilai MSE, maka akan semakin baik performa model. Dengan kata lain, kesalahan rata-rata prediksi terhadap data aktual semakin kecil. 
 
-### Hasil Evaluasi Solution 1
+## Hasil Evaluasi Solution 1
 
 Berikut adalah hasil evaluasi MSE yang dilakukan terhadap tiga model utama, yaitu Linear Regression (LR), Random Forest Regressor (RF), dan Gradient Boosting Regressor (GB):
 
@@ -364,7 +367,7 @@ Selanjutnya, prediksi terhadap data uji dilakukan untuk mengevaluasi lebih lanju
 Dari hasil di atas, model Random Forest (RF) menghasilkan prediksi yang paling mendekati nilai aktual dengan selisih sekitar ~6.194, disusul oleh Gradient Boosting (GB) dengan selisih ~9.969, dan Linear Regression (LR) dengan selisih ~10.961.
 Namun, mengingat bahwa model Random Forest (RF) menunjukkan indikasi overfitting berdasarkan selisih yang besar antara MSE pelatihan dan pengujian, performanya berpotensi tidak konsisten saat diuji pada data baru. Sebaliknya, Gradient Boosting menunjukkan performa yang lebih konsisten dan stabil sehingga model ini lebih direkomendasikan untuk prediksi yang membutuhkan kemampuan generalisasi yang baik.
 
-### Hasil Evaluasi Solution 2
+## Hasil Evaluasi Solution 2
 
 Berikut adalah hasil evaluasi MSE terhadap model Random Forest (RF) dan Gradient Boosting (GB) setelah dilakukan tuning:
 
@@ -387,7 +390,7 @@ Dari hasil di atas, model Tuned Random Forest (RF) menghasilkan prediksi yang pa
 Kedua model menunjukkan performa yang cukup baik setelah dilakukan tuning, namun Tuned RF memberikan prediksi yang lebih akurat pada data ini. Selain itu, berdasarkan evaluasi MSE sebelumnya, keduanya juga menunjukkan kemampuan generalisasi yang baik, sehingga keduanya layak dipertimbangkan untuk implementasi lebih lanjut.
 
 
-## Kesimpulan
+# Kesimpulan
 
 - Dalam proyek prediksi harga rumah ini, ukuran rumah (SquareFeet) terbukti menjadi faktor utama yang memengaruhi harga, sementara variabel lainnya seperti fasilitas kamar tidur, kamar mandi, serta area lingkungan rumah memiliki kontribusi yang minimal. 
 - Setelah melakukan evaluasi dan perbandingan berbagai model, termasuk model yang telah di-tuning, model Tuned Random Forest (solution 2) dipilih sebagai model paling optimal untuk diterapkan dalam prediksi harga rumah. Model ini tidak hanya menghasilkan prediksi yang sangat mendekati nilai aktual, tetapi juga menunjukkan kemampuan generalisasi yang baik tanpa mengalami overfitting.
