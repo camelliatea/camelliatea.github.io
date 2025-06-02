@@ -5,6 +5,17 @@ date: 2025-05-18
 author_profile: false
 ---
 
+## Tools
+
+- **Jupyter Notebook**: [Colab](https://github.com/camelliatea/anime-recommendation-system/blob/main/System_Recommendation_Notebook.ipynb)
+- **Bahasa Pemrograman:** Python
+- **Pustaka:** 
+    - Pandas dan Numpy, untuk manipulasi dan analisis data.
+    - Matplotlib, untuk visualisasi data.
+    - scikit-learn, untuk ekstraksi fitur teks (TF-IDF) dan perhitungan cosine similarity dalam pendekatan Content-Based Filtering.
+    - TensorFlow dan Keras, untuk pembangunan dan pelatihan model machine learning dalam pendekatan Collaborative Filtering.
+- **Sumber Dataset:** [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database)
+
 ## Project Overview
 
 Seiring meningkatkan jumlah konten hiburan yang tersedia secara online, termasuk anime (animasi dari Jepang), pengguna menghadapi tantangan dalam menemukan konten yang relevan dan sesuai dengan preferensi mereka. Situasi ini merupakan salah satu cerminan dari fenomena information overload, di mana pengguna mengalami kesulitan dalam memilah informasi yang sesuai dengannya dari sekian banyak pilihan yang tersedia. Adapun, tujuan dari proyek ini adalah membangun sistem rekomendasi anime ayang efektif dengan memanfaatkan dataset hasil web scraping dari situs komunitas anime terbesar, yakni [MyAnimeList](https://myanimelist.net/anime.php), yang mencakup berbagai informasi penting sebagai dasar dalam proses rekomendasi, termasuk judul, genre, jumlah episode, serta rating dari pengguna. Harapannya, pengguna dapat menemukan anime yang relevan melalui pendekatan personalisasi berbasis data. 
@@ -32,6 +43,7 @@ Dengan mempertimbangkan kebutuhan pengguna dalam menghadapi banyaknya pilihan to
 - Menerapkan kombinasi dua pendekatan utama, yaitu content-based filtering dan collaborative filtering, untuk mengatasi keterbatasan sistem rekomendasi tunggal dan meningkatkan kualitas hasil rekomendasi.
 
 ### Solution statements
+
 - **Solution Approach 1: Content-Based Filtering**
 
     Menggunakan informasi genre dari setiap anime untuk membangun model rekomendasi yang menyarankan anime dengan kesamaan karakteristik konten terhadap anime yang sebelumnya disukai pengguna. Pendekatan ini mempersonalisasi hasil berdasarkan item.
@@ -46,6 +58,7 @@ Dengan mempertimbangkan kebutuhan pengguna dalam menghadapi banyaknya pilihan to
 Dataset yang digunakan dalam proyek ini adalah [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data), hasil kompilasi data dari situs komunitas anime terbesar, yaitu *MyAnimeList*, yang dikumpulkan oleh pengguna kaggle *CooperUnion* melalui pengolahan dari API publik. Dataset ini menyajikan informasi mengenai preferensi pengguna terhadap anime yang mencakup data dari 73.516 pengguna dan 12.294 judul anime dalam dua berkas utama, yaitu `anime.csv` dan `rating.csv`. Berikut ini adalah variabel yang terkandung di dalam kedua berkas tersebut.
 
 ### Variabel Description
+
 #### Anime.csv
 
 ```
@@ -64,6 +77,7 @@ Data columns (total 7 columns):
 dtypes: float64(1), int64(2), object(4)
 memory usage: 672.5+ KB
 ```
+
 - Dataset ini terdiri dari 7 kolom dan 12.294 baris, dengan 1 kolom bertipe float64, 2 kolom bertipe int64, dan 4 kolom bertipe object.
 - Kolom `anime_id` memiliki tipe data int64 dengan total 12.294 sampel data, yang merepresentasikan ID unik untuk mengindentifikasi setiap anime.
 - Kolom `name` memiliki tipe data object dengan total 12.294 sampel data, yang  judul dari setiap anime.
@@ -74,6 +88,7 @@ memory usage: 672.5+ KB
 - Kolom `members` memiliki tipe data int64 dengan total 12.294 sampel data, yang merepresentasikan jumlah anggota komunitas MyAnimeList yang memasukkan anime tertentu ke dalam daftar mereka.
 
 #### Rating.csv
+
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 7813737 entries, 0 to 7813736
@@ -86,12 +101,14 @@ Data columns (total 3 columns):
 dtypes: int64(3)
 memory usage: 178.8 MB
 ```
+
 - Dataset ini terdiri dari 3 kolom dan 7..813.737 baris data, yang mana seluruh data bertipe int64.
 - Kolom `user_id` merepresentasikan ID unik untuk pengguna yang bersifat anonim dan dihasilkan secara acak.
 - Kolom `anime_id` merepresentasikan ID unik untuk mengidentifikasi setiap anime, berperan sebagai foreign key untuk menghubungkan file `rating.csv` dengan `anime.csv`.
 - Kolom `rating` merepresentasikan ilai rating yang diberikan setiap pengguna kepada suatu anime. Nilainya berkisar antara 1 sampai 10, dengan -1 jika pengguna menonton anime tersebut tetapi tidak memberikan rating.
 
 ### Univariate Exploratory Analysis
+
 ```
 Jumlah Anime: 12294
 Jumlah genre:  43
@@ -122,7 +139,9 @@ Daftar Tipe: ['Movie' 'TV' 'OVA' 'Special' 'Music' 'ONA' nan]
 | Max       | 10.00      |
 
 ```
+
 Dari eksplorasi di atas, diketahui beberapa informasi berikut:
+
 - Dataset mengandung 12.294 judul anime unik.
 - Anime dalam dataset dikategorikan ke dalam 7 tipe unik, yaitu Movie, TV, OVA, Special, Music, ONA, dan nan. 'nan' di sini mengacu pada nilai kosong sehingga akan dibersihkan pada tahapan selanjutnya.
 - Anime dalam dataset tersebar ke dalam 43 tipe genre, seperti Romance, Sci-Fi, Historical, dan banyak lagi.
@@ -137,12 +156,14 @@ Tahapan ini bertujuan untuk membersihkan dan menyiapkan data dari dua dataset ut
 
 ### Data Preprocessing
 
-Tahapan ini mencakup tiga proses utama, yaitu penggabungan dua dataset (anime dan rating) disertai dengan penyesuaian nama kolom yang serupa untuk menghindari kebingungan, pemeriksaan konsistensi skala rating agar seluruh nilai berada dalam rentang valid 1 hingga 10, serta penanganan nilai yang hilang (missing values) untuk memastikan integritas serta kualitas data yang akan digunakan dalam proses pembangunan model..
+Tahapan ini mencakup tiga proses utama, yaitu penggabungan dua dataset (anime dan rating) disertai dengan penyesuaian nama kolom yang serupa untuk menghindari kebingungan, pemeriksaan konsistensi skala rating agar seluruh nilai berada dalam rentang valid 1 hingga 10, serta penanganan nilai yang hilang (missing values) untuk memastikan integritas serta kualitas data yang akan digunakan dalam proses pembangunan model.
 
 1. **Merge and Transform Data**
+
     Penggabungan data dilakukan menggunakan `pd.merge` dengan metode `left` join berdasarkan kolom `anime_id`. Metode `left` join dipilih untuk mempertahankan seluruh data dari dataset ratings yang berisi aktivitas pengguna, meskipun beberapa `anime_id` mungkin tidak memiliki pasangan yang cocok di dataset anime. Setelah penggabungan, karena kedua dataset memiliki kolom rating, pandas secara otomatis menamainya sebagai `rating_x` (dari `ratings`) dan `rating_y` (dari `anime`). Oleh karena itu, kolom `rating_x` diubah menjadi `user_rating` dan `rating_y` menjadi `community_rating` dengan fungsi rename untuk memperjelas perbedaan. Langkah ini penting untuk memastikan integritas dan keterbacaan data yang akan digunakan dalam pemodelan sistem rekomendasi. Selain itu, dilakukan juga pengubahan tipe data untuk fitur `user_rating` yang mulanya int64 menjadi float64.
 
 2. **User Rating Scaling**
+
     Untuk memastikan bahwa skala rating berada pada rentang valid antara 1 hingga 10, dilakukan proses filtering pada DataFrame `anime_ratings` menggunakan kondisi boolean (`(anime_ratings['user_rating'] >= 1) & (anime_ratings['user_rating'] <= 10)`) sehingga hanya baris-baris dengan nilai `user_rating` di antara 1 dan 10 (True) yang dipertahankan, sementara nilai di luar rentang tersebut (False) dikeluarkan dari data untuk menjaga konsistensi dan kualitas input bagi model.
     Hasilnya:
 
@@ -160,9 +181,11 @@ Tahapan ini mencakup tiga proses utama, yaitu penggabungan dua dataset (anime da
     - Rating pengguna sudah berada dalam rentang yang valid, yaitu 1 hingga 10, dengan rata-rata rating sebesar 7,8 dan standar deviasi sebesar 1,5, menunjukkan bahwa mayoritas rating cenderung positif dan konsisten
 
 3. **Missing Values Handling**
+
     Untuk menangani nilai kosong pada dataset, pertama-tama dilakukan pengecekan dengan menggunakan `isnull().sum()` Untuk menangani nilai kosong pada dataset, pertama-tama dilakukan pengecekan dengan menggunakan `dropna()`, dan hasil pembersihan disimpan ke dalam variabel `anime_cleaned`. Untuk memastikan bahwa proses pembersihan berhasil dan tidak ada nilai kosong yang tersisa, dilakukan pengecekan ulang menggunakan `isnull().sum()`.
 
 Adapun, struktur dataset setelah seluruh proses dilakukan sebagai berikut:
+
 ```
 <class 'pandas.core.frame.DataFrame'>
 Index: 6337241 entries, 47 to 7813736
@@ -186,6 +209,7 @@ Jumlah Tipe Anime dalam dataset:  6
 Jumlah genre:  43
 Daftar genre:  {'Samurai', 'Shoujo Ai', 'Vampire', 'Music', 'Space', 'Yaoi', 'Dementia', 'Police', 'Shounen', 'Military', 'Romance', 'Comedy', 'Seinen', 'Harem', 'Magic', 'Supernatural', 'Mecha', 'Drama', 'Action', 'Sports', 'Super Power', 'Slice of Life', 'Shoujo', 'Game', 'Psychological', 'Cars', 'Josei', 'Fantasy', 'Thriller', 'Mystery', 'Martial Arts', 'Adventure', 'Historical', 'School', 'Horror', 'Ecchi', 'Kids', 'Yuri', 'Parody', 'Sci-Fi', 'Hentai', 'Shounen Ai', 'Demons'}
 ```
+
 - Total sampel data yang tersedia saat ini berjumlah 6.337.241 baris dengan 9 kolom, terdiri dari 4 kolom bertipe float64 (`episodes`, `community_rating`, `members`, `user_rating`), 2 kolom bertipe int64 (`user_id`, `anime_id`), dan 3 kolom bertipe object (`name`, `genre`, `type`).
 - Jumlah anime unik berkurang dari 12.294 menjadi 9.890 setelah proses pembersihan data, kategori tipe anime menyusut dari 7 menjadi 6, sedangkan jumlah daftar genre tetap konsisten yaitu sebanyak 43 genre.
 
@@ -197,6 +221,7 @@ Pada tahapan ini, data anime yang sudah dibersihkan (`anime_cleaned`) disalin ke
 Selanjutnya, beberapa kolom penting seperti `anime_id`, `name`, `genre`, dan `type` dikonversi dari format series menjadi list menggunakan `tolist()` agar mudah digunakan dalam proses pembentukan fitur. Panjang dari masing-masing list tersebut juga diperiksa untuk memastikan konsistensi data.
 
 Terakhir, data dari list-list tersebut digabungkan kembali ke dalam sebuah DataFrame baru bernama `anime_new` yang hanya berisi kolom `id` (anime_id), `anime_name`, `genre`, dan `type`. DataFrame ini akan menjadi dasar dalam pembuatan sistem rekomendasi content-based filtering yang memanfaatkan atribut genre anime sebagai fitur utama. Contoh hasilnya sebagai berikut:
+
 | id | anime_name                  | genre                                                 | type  |
 |----|-----------------------------|--------------------------------------------------------|-------|
 | 1  | Cowboy Bebop                | Action, Adventure, Comedy, Drama, Sci-Fi, Space       | TV    |
@@ -206,9 +231,11 @@ Terakhir, data dari list-list tersebut digabungkan kembali ke dalam sebuah DataF
 | 8  | Beet the Vandel Buster      | Adventure, Fantasy, Shounen, Supernatural             | TV    |
 
 ### Data Preparation for Collaborative Filtering
+
 Pada tahapan ini, dilakukan dua proses utama, yaitu persiapan data rating khusus untuk model Collaborative Filtering dan pembagian data menjadi data pelatihan (training) dan data validasi (validation). Seluruh proses ini dilakukan menggunakan variabel `preparation_collab` yang merupakan salinan dari dataset `anime_cleaned` agar proses manipulasi tidak mengubah data asli. Langkah-langkah ini memastikan bahwa data sudah dalam format numerik, terstruktur, dan teracak dengan baik sehingga siap digunakan sebagai input untuk model rekomendasi berbasis rating
 
 1. **Rating Data Preparation**
+
     Persiapan data rating dilakukan dalam beberapa langkah berikut:
 
     - Encoding Fitur
@@ -228,6 +255,7 @@ Pada tahapan ini, dilakukan dua proses utama, yaitu persiapan data rating khusus
     Dari proses tersebut, diketahui bahwa  `preparation_collab` mencakup 69.600 pengguna unik dan 9.890 anime unik, dengan skala rating 1.0 – 10.0, dan sudah siap untuk dimasukkan ke dalam model Collaborative Filtering.
 
 2. **Train-Val Split**
+
     Setelah data dipersiapkan, dilakukan pembagian dataset menjadi data pelatihan dan validasi untuk melatih serta menguji performa model:
 
     - Mengacak Data
@@ -246,6 +274,7 @@ Pada tahapan ini, dilakukan dua proses utama, yaitu persiapan data rating khusus
         Dataset dibagi menjadi (1) `x_train` dan `y_train` sebanyak 80%, dan (2) `x_val` dan `y_val` sebanyak 20%
 
 ## Modeling
+
 Pada tahapan ini, digunakan dua pendekatan utama untuk mengembangkan sistem rekomendasi, yaitu *Conntent-Based Filtering* dan *Collaborative Filtering.* Kedua pendekatan ini diterapkan untuk menghasilkan rekomendasi yang revelan dan sesuai dengan preferensi pengguna sesuai dengan data yang tersedia.
 
 ### Model Development - Content-Based Filtering
@@ -253,6 +282,7 @@ Pada tahapan ini, digunakan dua pendekatan utama untuk mengembangkan sistem reko
 Genre digunakan sebagai fitur utama untuk mengembangkan model Content-Based Filtering. Ini dipilih karena genre secara langsung merepresentasikan karakteristik konten dari setiap judul. Genre dianggap relevan dan informatif dalam menentukan kesesuaian atau kemiripan antar anime, sehingga dapat meningkatkan kualitas rekomendasi yang dihasilkan.
 
 Beberapa tahapan untuk mengembangkan model ini:
+
 1. TF-IDF Vectorizer
 
     Genre dari setiap anime diekstrak menggunakan teknik TF-IDF (Term Frequency–Inverse Document Frequency), yang mengubah teks genre menjadi representasi vektor numerik. Teknik ini menekankan genre yang unik atau jarang muncul sebagai informasi yang lebih penting dalam membedakan anime satu dengan lainnya
@@ -266,11 +296,13 @@ Beberapa tahapan untuk mengembangkan model ini:
     Fungsi `anime_recommendation` dikembangkan untuk memberikan Top-N rekomendasi anime (secara default berjumlah 5 judul) yang memiliki kemiripan genre tertinggi terhadap anime yang dipilih pengguna. Output dari fungsi ini berupa daftar anime beserta informasi tambahan seperti nama anime, genre, dan tipe anime (TV, Movie, OVA, dll).
 
 Kelebihan pendekatan ini:
+
 - Personalized atau rekomendasi sangat relevan dengan preferensi pengguna karena didasarkan pada konten anime yang sebelumnya disukai.
 - Pengguna dapat dengan mudah memahami alasan di balik rekomendasi karena penggunaan genre sebagai dasar terlihat polanya.
 - Tidak memerlukan data pengguna lain karena sistem cukup mengetahui preferensi pengguna terhadap satu item.
 
 Kekurangan pendekatan ini:
+
 - Sistem cenderung merekomendasikan anime yang terlalu mirip dengan preferensi awal dan kurang mengeksplorasi genre lain yang mungkin juga disukai pengguna.
 - Model tidak menggunakan informasi tambahan seperti rating, popularitas, durasi episode, atau ulasan pengguna yang bisa memperkaya rekomendasi.
 - Sistem tidak belajar dari perilaku pengguna lain sehingga tidak dapat menemukan pola kesukaan yang lebih kompleks atau kolektif.
@@ -313,11 +345,13 @@ Top 10 Anime Rekomendasi:
 Berdasarkan hasil di atas, terlihat bahwa sistem dapat memberikan rekomendasi yang cukup relevan dengan mempertimbangkan genre dan gaya anime yang sebelumnya disukai pengguna, seperti Shoujo, Romance, dan Supernatural, dan juga memberikan variasi seperti Action dan Psychological Thriller, yang berpotensi menarik bagi pengguna.
 
 Kelebihan pendekatan ini:
+
 - Model dapat menangkap hubungan kompleks antara pengguna dan item.
 - Model dapat diskalakan ke jutaan pengguna dan item untuk menangani jutaan pengguna dan item secara efisien.
 - Setiap pengguna dan item direpresentasikan secara unik dalam ruang vektor sehingga rekomendasi sangat disesuaikan dengan preferensi masing-masing pengguna.
 
 Kekurangan pendekatan ini:
+
 - Model tidak bisa memberikan rekomendasi yang baik untuk pengguna atau item baru yang belum memiliki interaksi apapun (zero interaction).
 - Agar model dapat belajar representasi yang efektif, dibutuhkan dataset yang cukup besar dan memiliki kualitas data interaksi yang baik.
 - Sulit untuk menjelaskan alasan spesifik di balik rekomendasi.
@@ -339,9 +373,11 @@ Metrik ini bekerja dengan menghitung berapa banyak dari rekomendasi yang benar-b
 **Hasil Evaluasi**
 
 Pengujian dilakukan terhadap anime "Haikyuu!!: Karasuno Koukou VS Shiratorizawa Gakuen Koukou", yang memiliki genre: *Comedy, Drama, School, Shounen, dan Sports*.
+
 Selanjut dilakukan pemanggilan fungsi untuk menghasilkan 10 rekomendasi (Top 10) anime dengan genre serupa atau sangat mendekati melalui kode berikut: `anime_recommendation('Haikyuu!!: Karasuno Koukou VS Shiratorizawa Gakuen Koukou', k=10)`. 
 
 Berikut hasil rekomendasi yang diberikan sistem:
+
 | No. | Anime Name                                             | Genre                                                | Type   |
 |-----|--------------------------------------------------------|------------------------------------------------------|--------|
 | 1   | Haikyuu!! Movie 1: Owari to Hajimari                   | Comedy, Drama, School, Shounen, Sports               | Movie  |
@@ -368,6 +404,7 @@ Nilai Precision@10 sebesar 100% menunjukkan bahwa sistem berhasil memberikan rek
 Metrik yang digunakan untuk mengevaluasi kinerja sistem rekomendasi berbasis kolaboratif adalah Root Mean Squared Error (RMSE). Metrik ini merupakan metrik yang umum digunakan untuk mengukur kesalahan prediksi dalam model rekomendasi berbasis regresi atau prediksi rating. RMSE memberikan gambaran seberapa jauh prediksi model menyimpang dari nilai aktual dalam satuan yang sama dengan data asli.
 
 RMSE didefinisikan sebagai berikut:
+
 $$
 RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
 $$
@@ -385,11 +422,14 @@ RMSE mengkuadratkan kesalahan prediksi sehingga penalti terhadap kesalahan besar
 ![Result Evaluation RMSE](image.png)
 
 Berdasarkan grafik pelatihan model yang menunjukkan metrik root_mean_squared_error pada data training dan testing, didapatkan bahwa nilai RMSE stabil pada kisaran:
+
 - Training RMSE ≈ 0.167
 - Validation RMSE ≈ 0.168
 
 Grafik menunjukkan bahwa model mengalami peningkatan performa yang cepat hingga epoch ke-3, lalu melandai dan stabil. Hal ini menunjukkan bahwa model memiliki kemampuan prediksi yang baik dan stabil setelah beberapa epoch pelatihan tanpa mengalami overfitting yang signifikan.
 
 ## Kesimpulan
+
 - Sistem rekomendasi berbasis konten dan kolaboratif mampu membantu pengguna menemukan tontonan anime yang relevan dengan preferensi pribadi mereka secara efisien. Dengan memproses data rating dan interaksi pengguna, model dapat memberikan prediksi rekomendasi yang akurat sehingga pengguna tidak perlu memilih secara manual dari ribuan judul anime.
+
 - Dengan menggabungkan beberapa pendekatan rekomendasi, seperti collaborative filtering dan content-based filtering, sistem dapat menangkap berbagai aspek preferensi pengguna secara lebih holistik dan menghasilkan rekomendasi yang lebih relevan dan personal.
